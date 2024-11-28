@@ -1,4 +1,4 @@
-package com.kipsang.tasksmanagement.dto;
+package com.kipsang.tasksmanagement.dtos;
 
 import java.util.List;
 

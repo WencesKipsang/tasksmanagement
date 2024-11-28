@@ -1,4 +1,4 @@
-package com.kipsang.tasksmanagement.entity;
+package com.kipsang.tasksmanagement.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;

@@ -1,4 +1,4 @@
-package com.kipsang.tasksmanagement.dto;
+package com.kipsang.tasksmanagement.dtos;
 
 public class ErrorResponseDto {
 

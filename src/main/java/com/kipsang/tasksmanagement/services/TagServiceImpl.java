@@ -1,12 +1,12 @@
-package com.kipsang.tasksmanagement.service;
+package com.kipsang.tasksmanagement.services;
 
-import com.kipsang.tasksmanagement.dto.TagDetailsDto;
-import com.kipsang.tasksmanagement.dto.TagSummaryDto;
-import com.kipsang.tasksmanagement.dto.TaskDto;
-import com.kipsang.tasksmanagement.entity.Tag;
+import com.kipsang.tasksmanagement.dtos.TagDetailsDto;
+import com.kipsang.tasksmanagement.dtos.TagSummaryDto;
+import com.kipsang.tasksmanagement.dtos.TaskDto;
+import com.kipsang.tasksmanagement.models.Tag;
 import com.kipsang.tasksmanagement.globalExceptions.ResourceNotFoundException;
-import com.kipsang.tasksmanagement.repository.TagRepository;
-import com.kipsang.tasksmanagement.repository.TaskRepository;
+import com.kipsang.tasksmanagement.repositories.TagRepository;
+import com.kipsang.tasksmanagement.repositories.TaskRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,6 +39,21 @@ public class TagServiceImpl implements TagService{
                 .toList();
 
         return new TagDetailsDto(tag.getId(), tag.getName(), tasks);
+    }
+
+    public void deleteTag(Long tagId) {
+        Tag tag = tagRepository.findById(tagId)
+                .orElseThrow(() -> new ResourceNotFoundException("Tag with ID " + tagId + " not found"));
+
+        //Remove the tag association from tasks before deletion
+        taskRepository.findAll().forEach(task -> {
+            if (task.getTags().contains(tag)) {
+                task.getTags().remove(tag);
+                taskRepository.save(task);
+            }
+        });
+
+        tagRepository.delete(tag);
     }
 
 }

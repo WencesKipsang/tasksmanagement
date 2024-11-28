@@ -1,15 +1,13 @@
 package com.kipsang.tasksmanagement.globalExceptions;
 
-import com.kipsang.tasksmanagement.dto.ErrorResponseDto;
+import com.kipsang.tasksmanagement.dtos.ErrorResponseDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-@ControllerAdvice
+//@ControllerAdvice
 public class GlobalExceptionHandler {
-    // Handle ResourceNotFoundException (e.g., invalid task ID or tag ID)
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ErrorResponseDto> handleResourceNotFoundException(ResourceNotFoundException ex) {
         ErrorResponseDto error = new ErrorResponseDto(HttpStatus.NOT_FOUND.value(), ex.getMessage());

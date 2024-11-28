@@ -1,10 +1,13 @@
-package com.kipsang.tasksmanagement.dto;
+package com.kipsang.tasksmanagement.dtos;
+
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.*;
 
 public class TaskDto {
 
     private Long id;
+    @NotBlank(message = "Title is required")
     private String title;
     private Boolean completed;
     private List<String> tags;

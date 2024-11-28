@@ -1,6 +1,6 @@
-package com.kipsang.tasksmanagement.service;
+package com.kipsang.tasksmanagement.services;
 
-import com.kipsang.tasksmanagement.dto.TaskDto;
+import com.kipsang.tasksmanagement.dtos.TaskDto;
 
 import java.util.List;
 
