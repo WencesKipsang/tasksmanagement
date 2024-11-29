@@ -54,4 +54,7 @@ Enter the username and password your register in step
 
 ![create task](/images/createtaskpass.png)
 
-3. Interact freely with the rest of the endpoints.
+Create more tasks.
+3. <strong>View</strong> the tasks you Created in by clicking <strong><em>/api/getTasks</em></strong> 
+4. <strong>Update</strong> the task in <em><strong>api/updateTask/{id}</strong></em>
+4. Interact freely with the rest of the endpoints.
