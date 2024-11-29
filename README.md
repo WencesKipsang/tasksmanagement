@@ -45,16 +45,15 @@ For database creation steps use this link
 #### Steps:
 
 1. First click on <strong><em> /api/register</em></strong> to create an account with username and password that your will use whenever asked by swagger
+![register user](/images/registeruser.png)
 
-<div style="text-align: center;"><img src="/images/registeruser.png" alt="register user"  ></img></div>
-
-2. Create Tasks by clicking on <strong><em>/api/createTasks</em></strong>  then click <strong>try it out </strong> then fill in the title filed  and fill the tags. tags can
- be filled in arrays  and click exec  it will prompt for usernsme and password
-Enter the username and password your register in step
+2. Create Tasks by clicking on <strong><em>/api/createTasks</em></strong>  then click <strong>try it out </strong> then fill in the title filed  and fill the tags, tags can
+ be filled in arrays  and click exec  it will prompt for username and password<br/>
+  Enter the username and password your register in step
 
 ![create task](/images/createtaskpass.png)
 
-Create more tasks.
-3.  <strong>View</strong> the tasks you Created in by clicking <strong><em>/api/getTasks</em></strong> 
-4. <strong>Update</strong> the task in <em><strong>api/updateTask/{id}</strong></em>
+Create more tasks.<br/>
+3.  <strong>View</strong> the tasks you Created in by clicking <strong><em>/api/getTasks</em></strong> <br/>
+4. <strong>Update</strong> the task in <em><strong>api/updateTask/{id}</strong></em><br/>
 5. Interact freely with the rest of the endpoints.
