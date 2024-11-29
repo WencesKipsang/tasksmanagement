@@ -30,7 +30,7 @@ For database creation steps use this link
 
 3. Once the project has been successfully cloned, Navigate to the project folder and Right Click on pom.xml > Click Maven>Sync Project.
 
-   ![sync project](/images/Syncpom.png)
+   ![sync project](/images/syncpom.png)
 
 4. Find application.properties file under the src folder>resources and add your postgreSQL DB_USERNAME and DB_PASSWORD.
    ![aplication properties](/images/editapplicationpropertise.png)
@@ -40,7 +40,7 @@ For database creation steps use this link
 
    ![endpoints](/images/Swaggerui.png)
 
-### Interraction with Apis usin Swagger
+### Interaction with the Apis using Swagger
 
 #### Steps:
 
