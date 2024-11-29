@@ -41,21 +41,5 @@ public class SecurityConfig {
         provider.setUserDetailsService(userDetailsService);
         return provider;
     }
-//    @Bean
-//    public UserDetailsService userDetailsService(){
-//
-//        UserDetails user1 = User
-//                .withDefaultPasswordEncoder()
-//                .username("test")
-//                .password("test@123")
-//                .roles("USER")
-//                .build();
-//        UserDetails user2 = User
-//                .withDefaultPasswordEncoder()
-//                .username("test1")
-//                .password("test2@123")
-//                .roles("ADMIN")
-//                .build();
-//        return new InMemoryUserDetailsManager(user1,user2);
-//    }
+
 }

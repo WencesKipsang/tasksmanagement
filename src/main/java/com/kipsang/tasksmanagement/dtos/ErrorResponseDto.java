@@ -11,7 +11,7 @@ public class ErrorResponseDto {
         this.message = message;
     }
 
-    // Getters and setters
+
     public int getStatus() {
         return status;
     }

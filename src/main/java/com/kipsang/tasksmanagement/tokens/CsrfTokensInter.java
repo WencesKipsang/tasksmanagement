@@ -6,3 +6,4 @@ import org.springframework.security.web.csrf.CsrfToken;
 public interface CsrfTokensInter {
     public CsrfToken getCsrfToken(HttpServletRequest request);
 }
+

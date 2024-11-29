@@ -24,3 +24,4 @@ public class UserService {
         return new UserDto(savedUser.getUsername(),savedUser.getPassword());
     }
 }
+

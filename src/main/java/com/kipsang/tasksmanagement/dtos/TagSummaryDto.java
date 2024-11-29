@@ -20,7 +20,6 @@ public class TagSummaryDto {
         this.taskCount = taskCount;
     }
 
-
     public Long getId() {
         return id;
     }

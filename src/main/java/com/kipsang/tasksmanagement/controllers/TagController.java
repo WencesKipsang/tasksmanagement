@@ -25,13 +25,14 @@ public class TagController {
         return ResponseEntity.ok(tags);
     }
 
-    // Get details of a specific tag
+    // details of a specific tag
     @GetMapping("/getTagDetails/{id}")
     public ResponseEntity<TagDetailsDto> getTagDetails(@PathVariable Long id) {
         TagDetailsDto tagDetails = tagService.getTagDetails(id);
         return ResponseEntity.ok(tagDetails);
     }
 
+    //delete Tag
     @DeleteMapping("/tags/{tagId}")
     public ResponseEntity<Void> deleteTag(@PathVariable Long tagId) {
         tagService.deleteTag(tagId);

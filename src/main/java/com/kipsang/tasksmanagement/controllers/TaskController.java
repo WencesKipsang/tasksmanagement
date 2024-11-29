@@ -30,7 +30,7 @@ public class TaskController {
         return  csrfTokensInter.getCsrfToken(request);
     }
 
-    //New task
+    //Create New task
     @PostMapping("/createTasks")
     public ResponseEntity<TaskDto> createTask(@RequestBody TaskDto taskDto) {
         TaskDto createdTask = taskService.createTask(taskDto);

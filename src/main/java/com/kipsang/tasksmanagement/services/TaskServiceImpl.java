@@ -73,8 +73,7 @@ public class TaskServiceImpl implements TaskService {
                 .map(tagName -> tagRepository.findByName(tagName)
                         .orElseGet(() -> tagRepository.save(new Tag(tagName, null))))
                 .collect(Collectors.toList());
-//                .toList();
-//        task.setTags(new ArrayList<>());
+
         task.setTags(updatedTags);
 
         Task updatedTask = taskRepository.save(task);

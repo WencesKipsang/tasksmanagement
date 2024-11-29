@@ -38,7 +38,7 @@ For database creation steps use this link
    ![run](/images/runproject.png)
 6. Once the project successfully run, go to http://localhost:8080/swagger-ui/index.html on your browser. You can now interact with the API endpoints as shown:
 
-   ![enpoints](/images/Swaggerui.png)
+   ![endpoints](/images/Swaggerui.png)
 
 ### Interraction with Apis usin Swagger
 
@@ -47,3 +47,11 @@ For database creation steps use this link
 1. First click on <strong><em> /api/register</em></strong> to create an account with username and password that your will use whenever asked by swagger
 
 <div style="text-align: center;"><img src="/images/registeruser.png" alt="register user"  ></img></div>
+
+2. Create Tasks by clicking on <strong><em>/api/createTasks</em></strong>  then click <strong>try it out </strong> then fill in the title filed  and fill the tags. tags can
+ be filled in arrays  and click exec  it will prompt for usernsme and password
+Enter the username and password your register in step
+
+![create task](/images/createtaskpass.png)
+
+3. Interact freely with the rest of the endpoints.

@@ -14,3 +14,4 @@ public interface TaskRepository extends JpaRepository<Task ,Long> {
 
     List<Task> findByCompletedAndTagsNameIn(Boolean completed, List<String> tagNames);
 }
+

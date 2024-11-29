@@ -9,14 +9,3 @@ public class ResourceNotFoundException extends RuntimeException {
         super(message);
     }
 }
-//public class InvalidFieldException extends RuntimeException {
-//    public InvalidFieldException(String message) {
-//        super(message);
-//    }
-//}
-//
-//public class BadRequestException extends RuntimeException {
-//    public BadRequestException(String message) {
-//        super(message);
-//    }
-//}

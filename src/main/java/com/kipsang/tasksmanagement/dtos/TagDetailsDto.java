@@ -9,6 +9,7 @@ public class TagDetailsDto {
     private List<TaskDto> tasks;
 
     public TagDetailsDto() {
+
     }
 
     public TagDetailsDto(Long id, String name, List<TaskDto> tasks) {
