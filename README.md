@@ -18,7 +18,7 @@ For database creation steps use this link
 
 ### Steps
 
-1. Start IntelliJ and Click on <strong><em>File> New> Project> Version Control...</em></strong>
+1. Start IntelliJ and Click on <strong><em>File> New> Project> Project from Version Control...</em></strong>
    <br/>
 
    ![version contron](/images/selectfile.png)
