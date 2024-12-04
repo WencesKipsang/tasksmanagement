@@ -5,6 +5,7 @@ import com.kipsang.tasksmanagement.dtos.TaskDto;
 import com.kipsang.tasksmanagement.services.TaskService;
 import com.kipsang.tasksmanagement.tokens.CsrfTokensInter;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.web.csrf.CsrfToken;
@@ -32,7 +33,7 @@ public class TaskController {
 
     //Create New task
     @PostMapping("/createTasks")
-    public ResponseEntity<TaskDto> createTask(@RequestBody TaskDto taskDto) {
+    public ResponseEntity<TaskDto> createTask(@Valid @RequestBody TaskDto taskDto) {
         TaskDto createdTask = taskService.createTask(taskDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTask);
     }

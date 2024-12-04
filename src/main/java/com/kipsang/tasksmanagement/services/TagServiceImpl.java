@@ -4,7 +4,7 @@ import com.kipsang.tasksmanagement.dtos.TagDetailsDto;
 import com.kipsang.tasksmanagement.dtos.TagSummaryDto;
 import com.kipsang.tasksmanagement.dtos.TaskDto;
 import com.kipsang.tasksmanagement.models.Tag;
-import com.kipsang.tasksmanagement.globalExceptions.ResourceNotFoundException;
+import com.kipsang.tasksmanagement.exceptions.TaskNotFoundException;
 import com.kipsang.tasksmanagement.repositories.TagRepository;
 import com.kipsang.tasksmanagement.repositories.TaskRepository;
 import org.springframework.stereotype.Service;
@@ -31,7 +31,7 @@ public class TagServiceImpl implements TagService{
     @Override
     public TagDetailsDto getTagDetails(Long id) {
         Tag tag = tagRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Tag not found"));
+                .orElseThrow(() -> new TaskNotFoundException("Tag not found"));
 
         List<TaskDto> tasks = tag.getTasks().stream()
                 .map(task -> new TaskDto(task.getId(), task.getTitle(), task.getCompleted(),
@@ -43,7 +43,7 @@ public class TagServiceImpl implements TagService{
 
     public void deleteTag(Long tagId) {
         Tag tag = tagRepository.findById(tagId)
-                .orElseThrow(() -> new ResourceNotFoundException("Tag with ID " + tagId + " not found"));
+                .orElseThrow(() -> new TaskNotFoundException("Tag with ID " + tagId + " not found"));
 
         //Remove the tag association from tasks before deletion
         taskRepository.findAll().forEach(task -> {

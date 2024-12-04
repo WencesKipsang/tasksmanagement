@@ -3,6 +3,8 @@ package com.kipsang.tasksmanagement.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.*;
 
@@ -18,6 +20,14 @@ public class Tag {
 
     @ManyToMany(mappedBy = "tags")
     private List<Task> tasks = new ArrayList<>();
+
+    @CreationTimestamp
+    @Column(name = "created_at",nullable = false,updatable = false)
+    private Date created_at;
+
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private Date updated_at;
 
     public Tag(String name, List<Task> tasks) {
         this.name = name;

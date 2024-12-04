@@ -4,10 +4,14 @@ package com.kipsang.tasksmanagement.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -19,6 +23,7 @@ public class Task {
 
     private Long id;
 
+    @NotBlank(message = "Title is required")
     private String title;
 
     private Boolean completed;
@@ -29,6 +34,14 @@ public class Task {
             inverseJoinColumns = @JoinColumn(name = "tag_id"))
 
     private List<Tag> tags = new ArrayList<>();
+
+    @CreationTimestamp
+    @Column(name = "created_at",nullable = false,updatable = false)
+    private Date created_at;
+
+    @UpdateTimestamp
+    @Column(name = "updated_at")
+    private Date updated_at;
 
     public Long getId() {
         return id;
@@ -60,5 +73,21 @@ public class Task {
 
     public void setTags(List<Tag> tags) {
         this.tags = tags;
+    }
+
+    public Date getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(Date created_at) {
+        this.created_at = created_at;
+    }
+
+    public Date getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(Date updated_at) {
+        this.updated_at = updated_at;
     }
 }

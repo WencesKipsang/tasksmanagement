@@ -4,7 +4,7 @@ package com.kipsang.tasksmanagement.services;
 import com.kipsang.tasksmanagement.dtos.TaskDto;
 import com.kipsang.tasksmanagement.models.Tag;
 import com.kipsang.tasksmanagement.models.Task;
-import com.kipsang.tasksmanagement.globalExceptions.ResourceNotFoundException;
+import com.kipsang.tasksmanagement.exceptions.TaskNotFoundException;
 import com.kipsang.tasksmanagement.repositories.TagRepository;
 import com.kipsang.tasksmanagement.repositories.TaskRepository;
 import lombok.NoArgsConstructor;
@@ -62,7 +62,7 @@ public class TaskServiceImpl implements TaskService {
     public TaskDto updateTask(Long id, TaskDto taskDto) {
         // Find the existing task
         Task task = taskRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Task not found"));
+                .orElseThrow(() -> new TaskNotFoundException("Task not found with id  "+ id));
 
         // Update task properties
         task.setTitle(taskDto.getTitle());
@@ -83,7 +83,7 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public void deleteTask(Long id) {
         if (!taskRepository.existsById(id)) {
-            throw new ResourceNotFoundException("Task not found");
+            throw new TaskNotFoundException("Task not found with id "+ id);
         }
         taskRepository.deleteById(id);
     }
